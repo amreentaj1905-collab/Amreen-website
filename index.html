@@ -1,1427 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Amreen Taj S | Portfolio</title>
-
-    <style>
-        /* =========================
-           RESET & VARIABLES
-        ========================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg: #f7f8ff;
-            --bg-secondary: #ffffff;
-            --text: #172033;
-            --text-light: #5f6b7a;
-            --card: rgba(255, 255, 255, 0.72);
-            --border: rgba(255, 255, 255, 0.6);
-            --primary: #6c63ff;
-            --secondary: #00c6ff;
-            --pink: #ff4ecd;
-            --purple: #8b5cf6;
-            --shadow: 0 15px 45px rgba(80, 70, 150, 0.15);
-        }
-
-        body.dark {
-            --bg: #080b18;
-            --bg-secondary: #101426;
-            --text: #f5f7ff;
-            --text-light: #aeb8cc;
-            --card: rgba(20, 26, 45, 0.78);
-            --border: rgba(255, 255, 255, 0.08);
-            --primary: #8b7cff;
-            --secondary: #00d4ff;
-            --pink: #ff5bd8;
-            --purple: #a78bfa;
-            --shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            line-height: 1.7;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-            transition: background 0.4s, color 0.4s;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        /* =========================
-           ANIMATED BACKGROUND
-        ========================== */
-
-        body::before,
-        body::after {
-            content: "";
-            position: fixed;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.22;
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        body::before {
-            background: #7c3aed;
-            top: 10%;
-            left: -150px;
-            animation: floatBlob 8s ease-in-out infinite;
-        }
-
-        body::after {
-            background: #00c6ff;
-            right: -150px;
-            bottom: 5%;
-            animation: floatBlob 10s ease-in-out infinite reverse;
-        }
-
-        @keyframes floatBlob {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(60px, -50px);
-            }
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================== */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 15px 7%;
-
-            background: rgba(10, 14, 30, 0.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .logo {
-            color: white;
-            font-size: 22px;
-            font-weight: 800;
-            background: linear-gradient(90deg, #ffffff, #8be9ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #e7eaff;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #65e6ff;
-        }
-
-        .theme-btn {
-            border: none;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            background: linear-gradient(135deg, #6c63ff, #00c6ff);
-            color: white;
-            margin-left: 15px;
-            transition: 0.3s;
-        }
-
-        .theme-btn:hover {
-            transform: rotate(20deg) scale(1.08);
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            min-height: 92vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 20px;
-
-            background:
-                radial-gradient(circle at 20% 20%, rgba(108,99,255,0.28), transparent 35%),
-                radial-gradient(circle at 80% 30%, rgba(0,198,255,0.22), transparent 35%),
-                radial-gradient(circle at 50% 90%, rgba(255,78,205,0.16), transparent 35%);
-        }
-
-        .hero-content {
-            max-width: 850px;
-            animation: heroAppear 1.2s ease;
-        }
-
-        @keyframes heroAppear {
-            from {
-                opacity: 0;
-                transform: translateY(35px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .profile-wrapper {
-            display: inline-block;
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .profile-wrapper::before {
-            content: "";
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            background: linear-gradient(
-                135deg,
-                #6c63ff,
-                #00c6ff,
-                #ff4ecd,
-                #6c63ff
-            );
-            background-size: 300% 300%;
-            animation: gradientRotate 5s ease infinite;
-            z-index: -1;
-        }
-
-        @keyframes gradientRotate {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .profile-img {
-            width: 135px;
-            height: 135px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid var(--bg);
-            display: block;
-        }
-
-        .hello {
-            display: inline-block;
-            padding: 6px 15px;
-            border-radius: 30px;
-            color: var(--primary);
-            background: rgba(108,99,255,0.1);
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 7vw, 70px);
-            line-height: 1.1;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .gradient-text {
-            background: linear-gradient(
-                90deg,
-                #6c63ff,
-                #00c6ff,
-                #ff4ecd
-            );
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textGradient 4s linear infinite;
-        }
-
-        @keyframes textGradient {
-            to {
-                background-position: 200% center;
-            }
-        }
-
-        .hero h2 {
-            font-size: 23px;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: var(--text-light);
-            font-size: 17px;
-        }
-
-        .buttons {
-            margin-top: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            margin: 6px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-
-            background: linear-gradient(
-                135deg,
-                var(--primary),
-                var(--secondary)
-            );
-
-            box-shadow: 0 8px 25px rgba(108,99,255,0.3);
-            transition: 0.35s;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 15px 35px rgba(108,99,255,0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            color: white;
-            background: var(--primary);
-        }
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================== */
-
-        section {
-            padding: 90px 7%;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 50px;
-            font-weight: 900;
-        }
-
-        .section-title span {
-            background: linear-gradient(90deg, var(--primary), var(--pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* =========================
-           GLASS CARDS
-        ========================== */
-
-        .glass {
-            background: var(--card);
-            border: 1px solid var(--border);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            box-shadow: var(--shadow);
-        }
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about-card {
-            padding: 40px;
-            border-radius: 25px;
-            text-align: center;
-        }
-
-        .about-card p {
-            color: var(--text-light);
-            font-size: 17px;
-        }
-
-        /* =========================
-           EDUCATION
-        ========================== */
-
-        .timeline {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .timeline-card {
-            position: relative;
-            padding: 28px;
-            margin-bottom: 25px;
-            border-radius: 20px;
-            transition: 0.35s;
-        }
-
-        .timeline-card:hover {
-            transform: translateX(8px);
-        }
-
-        .timeline-card::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 5px;
-            border-radius: 10px;
-            background: linear-gradient(
-                #6c63ff,
-                #00c6ff,
-                #ff4ecd
-            );
-        }
-
-        .timeline-card h3 {
-            margin-bottom: 8px;
-            font-size: 21px;
-        }
-
-        .timeline-card p {
-            color: var(--text-light);
-        }
-
-        /* =========================
-           SKILLS
-        ========================== */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-        }
-
-        .skill-card {
-            padding: 28px;
-            border-radius: 20px;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::after {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--pink));
-            filter: blur(40px);
-            opacity: 0.2;
-            right: -30px;
-            top: -30px;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .skill-icon {
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .skill-card p {
-            color: var(--text-light);
-        }
-
-        /* =========================
-           PROJECTS
-        ========================== */
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-        }
-
-        .project-card {
-            padding: 32px;
-            border-radius: 25px;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(108,99,255,0.2);
-        }
-
-        .project-number {
-            font-size: 50px;
-            font-weight: 900;
-            color: rgba(108,99,255,0.12);
-            position: absolute;
-            right: 20px;
-            top: 10px;
-        }
-
-        .project-card h3 {
-            font-size: 21px;
-            margin-bottom: 12px;
-            padding-right: 45px;
-        }
-
-        .tech {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .project-card ul {
-            padding-left: 20px;
-            color: var(--text-light);
-        }
-
-        .project-card li {
-            margin-bottom: 8px;
-        }
-
-        /* =========================
-           CERTIFICATIONS
-        ========================== */
-
-        .cert-box {
-            max-width: 800px;
-            margin: auto;
-            padding: 35px;
-            border-radius: 25px;
-            text-align: center;
-        }
-
-        .cert-box p {
-            color: var(--text-light);
-            font-size: 17px;
-        }
-
-        /* =========================
-           ACHIEVEMENTS
-        ========================== */
-
-        .achievement-list {
-            max-width: 900px;
-            margin: auto;
-            list-style: none;
-        }
-
-        .achievement-list li {
-            padding: 22px 25px;
-            margin-bottom: 17px;
-            border-radius: 18px;
-            color: var(--text-light);
-            transition: 0.3s;
-        }
-
-        .achievement-list li:hover {
-            transform: translateX(8px);
-        }
-
-        .achievement-list li::before {
-            content: "✦";
-            color: var(--pink);
-            font-size: 20px;
-            margin-right: 12px;
-        }
-
-        /* =========================
-           CONTACT
-        ========================== */
-
-        .contact {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card {
-            max-width: 850px;
-            margin: auto;
-            padding: 45px;
-            border-radius: 30px;
-            text-align: center;
-        }
-
-        .contact-card p {
-            color: var(--text-light);
-            margin: 12px 0;
-        }
-
-        .contact-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: var(--text-light);
-            border-top: 1px solid var(--border);
-        }
-
-        /* =========================
-           BACK TO TOP
-        ========================== */
-
-        #topBtn {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            width: 45px;
-            height: 45px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            color: white;
-            font-size: 20px;
-            background: linear-gradient(135deg, #6c63ff, #00c6ff);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            display: none;
-            z-index: 999;
-        }
-
-        #topBtn:hover {
-            transform: translateY(-4px);
-        }
-
-        /* =========================
-           SCROLL ANIMATION
-        ========================== */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media (max-width: 800px) {
-
-            nav {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 13px 5%;
-            }
-
-            nav ul {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                gap: 15px;
-                flex-wrap: wrap;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .theme-btn {
-                margin-left: auto;
-            }
-
-            .hero {
-                min-height: 85vh;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-
-            section {
-                padding: 65px 5%;
-            }
-
-            .about-card,
-            .contact-card {
-                padding: 28px 20px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero h2 {
-                font-size: 18px;
-            }
-
-            .profile-img {
-                width: 115px;
-                height: 115px;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
+    <!-- Navigation -->
     <nav>
+        <h2>Amreen Taj S</h2>
 
-        <div class="logo">
-            Amreen Taj S
-        </div>
-
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
-            🌙
-        </button>
-
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="profile-wrapper">
-                <img
-                    src="pp%20amreen.jpeg"
-                    alt="Amreen Taj S"
-                    class="profile-img"
-                >
-            </div>
-
-            <div class="hello">
-                👋 Hello, I'm
-            </div>
-
-            <h1>
-                <span class="gradient-text">
-                    Amreen Taj S
-                </span>
-            </h1>
-
-            <h2>
-                Data Science Undergraduate
-            </h2>
-
-            <p>
-                Passionate about Data Science, Machine Learning,
-                Data Analytics, Full-Stack Development and
-                Flutter Development.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#projects" class="btn">
-                    View My Projects
-                </a>
-
-                <a href="#contact" class="btn btn-outline">
-                    Contact Me
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+    <hr>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+    <!-- Hero Section -->
+    <header>
 
+        <img
+            src="pp%20amreen.jpeg"
+            alt="Amreen Taj S"
+            width="150"
+        >
+
+        <h1>Hi, I'm Amreen Taj S</h1>
+
+        <h2>Data Science Undergraduate</h2>
+
+        <p>
+            Motivated Computer Science (Data Science) undergraduate
+            passionate about Data Science, Machine Learning,
+            Data Analytics, Full-Stack Development and
+            Flutter Development.
+        </p>
+
+        <p>
+            <a href="#projects">View My Projects</a>
+            |
+            <a href="#contact">Contact Me</a>
+        </p>
+
+    </header>
+
+    <hr>
+
+
+    <!-- About Section -->
     <section id="about">
 
-        <div class="container reveal">
+        <h2>About Me</h2>
 
-            <h2 class="section-title">
-                About <span>Me</span>
-            </h2>
+        <p>
+            I am a motivated Data Science undergraduate with skills
+            in Python, SQL, Machine Learning, Data Analytics,
+            Full-Stack Development and Flutter Development.
+        </p>
 
-            <div class="about-card glass">
-
-                <p>
-                    I am a motivated Data Science undergraduate with
-                    skills in Python, SQL, Machine Learning, Data
-                    Analytics, Full-Stack Development and Flutter
-                    Development. I enjoy building data-driven
-                    applications and intelligent solutions through
-                    academic projects. I have strong analytical,
-                    problem-solving and communication skills, with
-                    a passion for transforming data into actionable
-                    business insights.
-                </p>
-
-            </div>
-
-        </div>
+        <p>
+            I enjoy building data-driven applications and
+            intelligent solutions through academic projects.
+            I have strong analytical, problem-solving and
+            communication skills, with a passion for transforming
+            data into actionable business insights.
+        </p>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         EDUCATION
-    ========================== -->
 
+    <!-- Education Section -->
     <section id="education">
 
-        <div class="container reveal">
+        <h2>Education</h2>
 
-            <h2 class="section-title">
-                My <span>Education</span>
-            </h2>
+        <h3>Sai Vidya Institute of Technology</h3>
 
-            <div class="timeline">
+        <p>
+            Bachelor of Engineering in Computer Science
+            (Data Science)
+        </p>
 
-                <div class="timeline-card glass">
+        <p>
+            2023 – 2027 | Bangalore, India
+        </p>
 
-                    <h3>
-                        🎓 Sai Vidya Institute of Technology
-                    </h3>
-
-                    <p>
-                        Bachelor of Engineering in Computer Science
-                        (Data Science)
-                    </p>
-
-                    <p>
-                        2023 – 2027 | Bangalore, India
-                    </p>
-
-                    <p>
-                        Visvesvaraya Technological University (VTU)
-                    </p>
-
-                </div>
+        <p>
+            Visvesvaraya Technological University (VTU)
+        </p>
 
 
-                <div class="timeline-card glass">
+        <h3>Kendriya Vidyalaya, Donimalai</h3>
 
-                    <h3>
-                        🏫 Kendriya Vidyalaya, Donimalai
-                    </h3>
+        <p>
+            CBSE Curriculum | Completed Primary to
+            Senior Secondary Education
+        </p>
 
-                    <p>
-                        CBSE Curriculum | Completed Primary to
-                        Senior Secondary Education
-                    </p>
-
-                    <p>
-                        2011 – 2023
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
+        <p>
+            2011 – 2023
+        </p>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         SKILLS
-    ========================== -->
 
+    <!-- Skills Section -->
     <section id="skills">
 
-        <div class="container reveal">
+        <h2>My Skills</h2>
 
-            <h2 class="section-title">
-                My <span>Skills</span>
-            </h2>
+        <h3>Programming</h3>
 
-            <div class="skills-grid">
-
-                <div class="skill-card glass">
-                    <div class="skill-icon">🐍</div>
-                    <h3>Programming</h3>
-                    <p>
-                        Python, SQL, C/C++, JavaScript
-                    </p>
-                </div>
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>C/C++</li>
+            <li>JavaScript</li>
+        </ul>
 
 
-                <div class="skill-card glass">
-                    <div class="skill-icon">📊</div>
-                    <h3>Data Analytics</h3>
-                    <p>
-                        Excel, Power BI, Tableau,
-                        Data Analysis, Data Visualization
-                    </p>
-                </div>
+        <h3>Data Analytics</h3>
+
+        <ul>
+            <li>Excel</li>
+            <li>Power BI</li>
+            <li>Tableau</li>
+            <li>Data Analysis</li>
+            <li>Data Visualization</li>
+        </ul>
 
 
-                <div class="skill-card glass">
-                    <div class="skill-icon">🤖</div>
-                    <h3>Machine Learning</h3>
-                    <p>
-                        Scikit-learn, Machine Learning,
-                        Predictive Modeling
-                    </p>
-                </div>
+        <h3>Machine Learning</h3>
+
+        <ul>
+            <li>Scikit-learn</li>
+            <li>Machine Learning</li>
+            <li>Predictive Modeling</li>
+        </ul>
 
 
-                <div class="skill-card glass">
-                    <div class="skill-icon">🗄️</div>
-                    <h3>Databases</h3>
-                    <p>
-                        MySQL, MongoDB, Firebase, SQLite
-                    </p>
-                </div>
+        <h3>Databases</h3>
+
+        <ul>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>Firebase</li>
+            <li>SQLite</li>
+        </ul>
 
 
-                <div class="skill-card glass">
-                    <div class="skill-icon">⚡</div>
-                    <h3>Frameworks</h3>
-                    <p>
-                        React.js, Flutter, FastAPI, Flask
-                    </p>
-                </div>
+        <h3>Frameworks</h3>
+
+        <ul>
+            <li>React.js</li>
+            <li>Flutter</li>
+            <li>FastAPI</li>
+            <li>Flask</li>
+        </ul>
 
 
-                <div class="skill-card glass">
-                    <div class="skill-icon">🛠️</div>
-                    <h3>Developer Tools</h3>
-                    <p>
-                        Git, GitHub, n8n, GitHub Copilot
-                    </p>
-                </div>
+        <h3>Developer Tools</h3>
+
+        <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>n8n</li>
+            <li>GitHub Copilot</li>
+        </ul>
 
 
-                <div class="skill-card glass">
-                    <div class="skill-icon">🧠</div>
-                    <h3>Core Concepts</h3>
-                    <p>
-                        DSA, OOP, REST APIs,
-                        Software Engineering
-                    </p>
-                </div>
+        <h3>Core Concepts</h3>
 
-            </div>
-
-        </div>
+        <ul>
+            <li>Data Structures and Algorithms</li>
+            <li>Object-Oriented Programming</li>
+            <li>REST APIs</li>
+            <li>Software Engineering</li>
+        </ul>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         PROJECTS
-    ========================== -->
 
+    <!-- Projects Section -->
     <section id="projects">
 
-        <div class="container reveal">
-
-            <h2 class="section-title">
-                Featured <span>Projects</span>
-            </h2>
-
-            <div class="project-grid">
-
-                <div class="project-card glass">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <h3>
-                        Smart Agricultural Waste
-                        Classification & Reuse Marketplace
-                    </h3>
-
-                    <p class="tech">
-                        Python • CNN • Machine Learning •
-                        Image Processing
-                    </p>
-
-                    <ul>
-                        <li>
-                            Developed an intelligent agricultural
-                            waste classification system.
-                        </li>
-
-                        <li>
-                            Trained CNN models to classify agricultural
-                            waste into reusable categories.
-                        </li>
-
-                        <li>
-                            Analyzed image data and extracted relevant
-                            features for automated categorization.
-                        </li>
-
-                        <li>
-                            Designed a marketplace connecting farmers,
-                            recyclers and buyers.
-                        </li>
-
-                        <li>
-                            Promoted sustainable waste management using
-                            data-driven insights.
-                        </li>
-                    </ul>
-
-                </div>
+        <h2>Featured Projects</h2>
 
 
-                <div class="project-card glass">
+        <h3>
+            1. Smart Agricultural Waste
+            Classification & Reuse Marketplace
+        </h3>
 
-                    <div class="project-number">
-                        02
-                    </div>
+        <p>
+            <strong>Technologies:</strong>
+            Python, CNN, Machine Learning, Image Processing
+        </p>
 
-                    <h3>
-                        Artificial Bee Pollination System
-                        for Ecosystem Restoration
-                    </h3>
+        <ul>
 
-                    <p class="tech">
-                        AI • Computer Vision • Drone Technology
-                    </p>
+            <li>
+                Developed an intelligent agricultural waste
+                classification system.
+            </li>
 
-                    <ul>
+            <li>
+                Trained CNN models to classify agricultural
+                waste into reusable categories.
+            </li>
 
-                        <li>
-                            Developed the concept of an AI-powered
-                            drone for automated flower detection
-                            and pollination.
-                        </li>
+            <li>
+                Analyzed image data and extracted relevant
+                features for automated categorization.
+            </li>
 
-                        <li>
-                            Integrated computer vision and pollen
-                            transfer mechanisms to mimic natural
-                            bee behavior.
-                        </li>
+            <li>
+                Designed a marketplace connecting farmers,
+                recyclers and buyers.
+            </li>
 
-                        <li>
-                            Promoted sustainable agriculture through
-                            technology-driven ecosystem restoration.
-                        </li>
+            <li>
+                Promoted sustainable waste management using
+                data-driven insights.
+            </li>
 
-                    </ul>
+        </ul>
 
-                </div>
 
-            </div>
+        <h3>
+            2. Artificial Bee Pollination System
+            for Ecosystem Restoration
+        </h3>
 
-        </div>
+        <p>
+            <strong>Technologies:</strong>
+            AI, Computer Vision, Drone Technology
+        </p>
+
+        <ul>
+
+            <li>
+                Developed the concept of an AI-powered drone
+                for automated flower detection and pollination.
+            </li>
+
+            <li>
+                Integrated computer vision and pollen transfer
+                mechanisms to mimic natural bee behavior.
+            </li>
+
+            <li>
+                Promoted sustainable agriculture through
+                technology-driven ecosystem restoration.
+            </li>
+
+        </ul>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         CERTIFICATIONS
-    ========================== -->
 
+    <!-- Certifications -->
     <section id="certifications">
 
-        <div class="container reveal">
+        <h2>Certifications</h2>
 
-            <h2 class="section-title">
-                <span>Certifications</span>
-            </h2>
-
-            <div class="cert-box glass">
-
-                <p>
-                    🏆 Multiple industry-recognized certifications
-                    from Infosys Springboard, SAP Learning Hub
-                    and Simplilearn.
-                </p>
-
-            </div>
-
-        </div>
+        <p>
+            Multiple industry-recognized certifications from
+            Infosys Springboard, SAP Learning Hub and Simplilearn.
+        </p>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         ACHIEVEMENTS
-    ========================== -->
 
+    <!-- Achievements -->
     <section id="achievements">
 
-        <div class="container reveal">
+        <h2>Achievements & Hackathons</h2>
 
-            <h2 class="section-title">
-                Achievements & <span>Hackathons</span>
-            </h2>
+        <ul>
 
-            <ul class="achievement-list">
+            <li>
+                Participated in Smart India Hackathon (SIH)
+                and collaborated on innovative technology-driven
+                solutions for real-world challenges.
+            </li>
 
-                <li class="glass">
-                    Participated in Smart India Hackathon (SIH)
-                    and collaborated on innovative technology-driven
-                    solutions for real-world challenges.
-                </li>
+            <li>
+                Participated in SHE Innovates, contributing ideas
+                focused on innovation, sustainability and
+                problem-solving.
+            </li>
 
-                <li class="glass">
-                    Participated in SHE Innovates, contributing ideas
-                    focused on innovation, sustainability and
-                    problem-solving.
-                </li>
+            <li>
+                Actively participated in hackathons and technical
+                events, enhancing teamwork, analytical thinking
+                and project development skills.
+            </li>
 
-                <li class="glass">
-                    Actively participated in hackathons and technical
-                    events, enhancing teamwork, analytical thinking
-                    and project development skills.
-                </li>
-
-            </ul>
-
-        </div>
+        </ul>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
 
-    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact">
 
-        <div class="container reveal">
+        <h2>Contact Me</h2>
 
-            <h2 class="section-title">
-                Let's <span>Connect</span>
-            </h2>
-            <!-- Contact Form -->
-<div class="contact-form glass">
 
-    <h3>Send Me a Message</h3>
+        <!-- Contact Form ABOVE contact information -->
 
-    <form>
+        <h3>Send Me a Message</h3>
 
-        <label for="name">Name:</label>
+        <form>
 
-        <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-        >
+            <p>
+                <label for="name">Name:</label>
+                <br>
 
-        <label for="email">Email:</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+            </p>
 
-        <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-        >
 
-        <label for="message">Message:</label>
+            <p>
+                <label for="email">Email:</label>
+                <br>
 
-        <textarea
-            id="message"
-            name="message"
-            rows="6"
-            placeholder="Write your message"
-            required
-        ></textarea>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </p>
 
-        <button type="submit" class="send-btn">
-            Send Message
-        </button>
 
-    </form>
+            <p>
+                <label for="message">Message:</label>
+                <br>
 
-</div>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    cols="40"
+                    placeholder="Write your message"
+                    required
+                ></textarea>
+            </p>
 
-            <div class="contact-card glass">
 
-                <p>
-                    📍 Bengaluru, Karnataka, India
-                </p>
+            <button type="submit">
+                Send Message
+            </button>
 
-                <p>
-                    📞 +91 90085 73089
-                </p>
+        </form>
 
-                <p>
-                    💼
-                    <a
-                        href="https://linkedin.com/in/amreen-taj-s-b4426b398"
-                        target="_blank"
-                    >
-                        LinkedIn Profile
-                    </a>
-                </p>
 
-                <p>
-                    💻
-                    <a
-                        href="https://github.com/amreentaj1905-collab"
-                        target="_blank"
-                    >
-                        GitHub Profile
-                    </a>
-                </p>
+        <hr>
 
-                <div class="buttons">
 
-                    <a
-                        href="https://github.com/amreentaj1905-collab"
-                        target="_blank"
-                        class="btn"
-                    >
-                        Visit My GitHub
-                    </a>
+        <!-- Existing Contact Information -->
 
-                </div>
+        <h3>My Contact Information</h3>
 
-            </div>
+        <p>
+            📍 Bengaluru, Karnataka, India
+        </p>
 
-        </div>
+        <p>
+            📞 +91 90085 73089
+        </p>
+
+        <p>
+            💼
+            <a
+                href="https://linkedin.com/in/amreen-taj-s-b4426b398"
+                target="_blank"
+            >
+                LinkedIn Profile
+            </a>
+        </p>
+
+        <p>
+            💻
+            <a
+                href="https://github.com/amreentaj1905-collab"
+                target="_blank"
+            >
+                GitHub Profile
+            </a>
+        </p>
 
     </section>
 
+    <hr>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
+    <!-- Footer -->
     <footer>
 
-        © 2026 Amreen Taj S |
-        Data Science Portfolio
+        <p>
+            © 2026 Amreen Taj S
+        </p>
+
+        <p>
+            Data Science Portfolio
+        </p>
 
     </footer>
 
-
-    <!-- BACK TO TOP -->
-
-    <button id="topBtn" onclick="goTop()">
-        ↑
-    </button>
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        /* =====================
-           DARK / LIGHT MODE
-        ====================== */
-
-        function toggleTheme() {
-
-            document.body.classList.toggle("dark");
-
-            const button =
-                document.getElementById("themeBtn");
-
-            if (document.body.classList.contains("dark")) {
-
-                button.innerHTML = "☀️";
-
-                localStorage.setItem(
-                    "theme",
-                    "dark"
-                );
-
-            } else {
-
-                button.innerHTML = "🌙";
-
-                localStorage.setItem(
-                    "theme",
-                    "light"
-                );
-            }
-        }
-
-
-        /* =====================
-           REMEMBER THEME
-        ====================== */
-
-        window.addEventListener("load", function () {
-
-            const savedTheme =
-                localStorage.getItem("theme");
-
-            if (savedTheme === "dark") {
-
-                document.body.classList.add("dark");
-
-                document.getElementById("themeBtn")
-                    .innerHTML = "☀️";
-            }
-
-        });
-
-
-        /* =====================
-           SCROLL REVEAL
-        ====================== */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-        function revealOnScroll() {
-
-            const windowHeight =
-                window.innerHeight;
-
-            revealElements.forEach(function(element) {
-
-                const elementTop =
-                    element.getBoundingClientRect().top;
-
-                if (elementTop < windowHeight - 100) {
-
-                    element.classList.add("active");
-
-                }
-
-            });
-
-        }
-
-        window.addEventListener(
-            "scroll",
-            revealOnScroll
-        );
-
-        revealOnScroll();
-
-
-        /* =====================
-           BACK TO TOP BUTTON
-        ====================== */
-
-        const topButton =
-            document.getElementById("topBtn");
-
-        window.addEventListener(
-            "scroll",
-            function() {
-
-                if (window.scrollY > 400) {
-
-                    topButton.style.display = "block";
-
-                } else {
-
-                    topButton.style.display = "none";
-
-                }
-
-            }
-        );
-
-
-        function goTop() {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-
-    </script>
-
 </body>
+
 </html>

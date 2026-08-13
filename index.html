@@ -175,27 +175,21 @@
 
 
         .blob-one {
-
             background: var(--pink);
-
             top: 100px;
             left: -100px;
         }
 
 
         .blob-two {
-
             background: var(--lavender);
-
             top: 500px;
             right: -100px;
         }
 
 
         .blob-three {
-
             background: var(--blue);
-
             bottom: 100px;
             left: 30%;
         }
@@ -241,7 +235,6 @@
 
 
         body.dark nav {
-
             background: rgba(33,28,29,0.85);
         }
 
@@ -314,7 +307,9 @@
 
         .theme-btn:hover {
 
-            transform: rotate(12deg) scale(1.05);
+            transform:
+                rotate(12deg)
+                scale(1.05);
         }
 
 
@@ -439,7 +434,8 @@
 
         .hero-content {
 
-            animation: fadeUp 0.8s ease both;
+            animation:
+                fadeUp 0.8s ease both;
         }
 
 
@@ -465,13 +461,18 @@
         }
 
 
+        /* =========================================================
+           HERO TEXT
+           SMALL FONT SIZE
+        ========================================================= */
+
         .hero h1 {
 
             font-family: "Playfair Display", serif;
 
-            font-size: clamp(48px, 7vw, 82px);
+            font-size: 18px;
 
-            line-height: 1.02;
+            line-height: 1.5;
 
             margin-bottom: 18px;
         }
@@ -483,9 +484,9 @@
 
             color: var(--brown-light);
 
-            font-size: 0.58em;
+            font-size: 18px;
 
-            margin-top: 12px;
+            margin-top: 4px;
         }
 
 
@@ -551,7 +552,8 @@
 
         .btn:hover {
 
-            transform: translateY(-4px);
+            transform:
+                translateY(-4px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -592,7 +594,8 @@
 
             z-index: -1;
 
-            animation: float 5s ease-in-out infinite;
+            animation:
+                float 5s ease-in-out infinite;
         }
 
 
@@ -605,7 +608,8 @@
 
             background: var(--white);
 
-            border-radius: 120px 120px 30px 30px;
+            border-radius:
+                120px 120px 30px 30px;
 
             box-shadow: var(--shadow-hover);
 
@@ -617,18 +621,22 @@
 
         .photo-frame:hover {
 
-            transform: rotate(0deg) translateY(-7px);
+            transform:
+                rotate(0deg)
+                translateY(-7px);
         }
 
 
         .photo-frame img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
 
-            border-radius: 115px 115px 24px 24px;
+            border-radius:
+                115px 115px 24px 24px;
         }
 
 
@@ -655,6 +663,7 @@
         .note-one {
 
             top: 25px;
+
             right: 5px;
 
             background: var(--sage-light);
@@ -666,6 +675,7 @@
         .note-two {
 
             bottom: 30px;
+
             left: 0;
 
             background: var(--peach-light);
@@ -710,6 +720,7 @@
             background: var(--pink-light);
 
             right: -80px;
+
             top: -80px;
         }
 
@@ -740,7 +751,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns:
+                repeat(4,1fr);
 
             gap: 14px;
 
@@ -764,7 +776,8 @@
 
         .highlight:hover {
 
-            transform: translateY(-6px);
+            transform:
+                translateY(-6px);
 
             box-shadow: var(--shadow);
         }
@@ -813,6 +826,7 @@
             left: 18px;
 
             top: 0;
+
             bottom: 0;
 
             width: 2px;
@@ -842,6 +856,7 @@
             position: absolute;
 
             left: 7px;
+
             top: 20px;
 
             width: 24px;
@@ -855,7 +870,8 @@
         }
 
 
-        .timeline-item:nth-child(2) .timeline-dot {
+        .timeline-item:nth-child(2)
+        .timeline-dot {
 
             border-color: var(--lavender);
         }
@@ -879,7 +895,8 @@
 
         .education-card:hover {
 
-            transform: translateX(7px);
+            transform:
+                translateX(7px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -887,7 +904,8 @@
 
         .education-card h3 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 25px;
 
@@ -929,7 +947,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns:
+                repeat(3,1fr);
 
             gap: 18px;
         }
@@ -988,7 +1007,8 @@
 
         .skill-card:hover {
 
-            transform: translateY(-7px);
+            transform:
+                translateY(-7px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -1004,7 +1024,8 @@
 
         .skill-card h3 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 22px;
 
@@ -1026,7 +1047,8 @@
 
             padding: 6px 10px;
 
-            background: rgba(255,255,255,0.65);
+            background:
+                rgba(255,255,255,0.65);
 
             border-radius: 20px;
 
@@ -1044,7 +1066,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns:
+                repeat(2,1fr);
 
             gap: 24px;
         }
@@ -1072,7 +1095,8 @@
 
         .project-card:hover {
 
-            transform: translateY(-9px);
+            transform:
+                translateY(-9px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -1104,7 +1128,8 @@
 
         .project-number {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 55px;
 
@@ -1116,7 +1141,8 @@
         }
 
 
-        .project-card:nth-child(2) .project-number {
+        .project-card:nth-child(2)
+        .project-number {
 
             color: #a99abf;
         }
@@ -1124,7 +1150,8 @@
 
         .project-card h3 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 27px;
 
@@ -1178,7 +1205,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns:
+                repeat(3,1fr);
 
             gap: 18px;
         }
@@ -1225,7 +1253,9 @@
 
         .cert-card:hover {
 
-            transform: rotate(-1deg) translateY(-6px);
+            transform:
+                rotate(-1deg)
+                translateY(-6px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -1239,7 +1269,8 @@
 
         .cert-card h3 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 23px;
         }
@@ -1261,7 +1292,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns:
+                repeat(3,1fr);
 
             gap: 18px;
         }
@@ -1285,7 +1317,8 @@
 
         .achievement:hover {
 
-            transform: translateY(-7px);
+            transform:
+                translateY(-7px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -1301,7 +1334,8 @@
 
         .achievement h3 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 22px;
 
@@ -1325,7 +1359,8 @@
 
             display: grid;
 
-            grid-template-columns: 1fr 0.8fr;
+            grid-template-columns:
+                1fr 0.8fr;
 
             gap: 25px;
         }
@@ -1360,7 +1395,8 @@
         .contact-card h3,
         .form-card h3 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             font-size: 28px;
 
@@ -1388,7 +1424,8 @@
 
             padding: 13px;
 
-            background: rgba(255,255,255,0.55);
+            background:
+                rgba(255,255,255,0.55);
 
             border-radius: 15px;
 
@@ -1398,7 +1435,8 @@
 
         .contact-item:hover {
 
-            transform: translateX(5px);
+            transform:
+                translateX(5px);
         }
 
 
@@ -1437,7 +1475,8 @@
 
             width: 100%;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             background: var(--cream);
 
@@ -1458,7 +1497,8 @@
 
             border-color: var(--pink);
 
-            box-shadow: 0 0 0 4px var(--pink-light);
+            box-shadow:
+                0 0 0 4px var(--pink-light);
         }
 
 
@@ -1494,7 +1534,8 @@
 
         .submit-btn:hover {
 
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px);
 
             box-shadow: var(--shadow-hover);
         }
@@ -1512,13 +1553,15 @@
 
             text-align: center;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
         }
 
 
         footer h2 {
 
-            font-family: "Playfair Display", serif;
+            font-family:
+                "Playfair Display", serif;
 
             margin-bottom: 5px;
         }
@@ -1550,7 +1593,8 @@
 
             border-radius: 30px;
 
-            background: var(--lavender-light);
+            background:
+                var(--lavender-light);
 
             font-size: 13px;
 
@@ -1560,9 +1604,11 @@
 
         .social-links a:hover {
 
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px);
 
-            background: var(--pink-light);
+            background:
+                var(--pink-light);
         }
 
 
@@ -1575,6 +1621,7 @@
             position: fixed;
 
             bottom: 25px;
+
             right: 25px;
 
             width: 45px;
@@ -1602,7 +1649,8 @@
 
         #topBtn:hover {
 
-            transform: translateY(-4px);
+            transform:
+                translateY(-4px);
         }
 
 
@@ -1614,7 +1662,8 @@
 
             opacity: 0;
 
-            transform: translateY(25px);
+            transform:
+                translateY(25px);
 
             transition:
                 opacity 0.7s ease,
@@ -1626,7 +1675,8 @@
 
             opacity: 1;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
         }
 
 
@@ -1640,14 +1690,16 @@
 
                 opacity: 0;
 
-                transform: translateY(25px);
+                transform:
+                    translateY(25px);
             }
 
             to {
 
                 opacity: 1;
 
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
         }
 
@@ -1657,12 +1709,14 @@
             0%,
             100% {
 
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
 
             50% {
 
-                transform: translateY(-15px);
+                transform:
+                    translateY(-15px);
             }
         }
 
@@ -1712,6 +1766,7 @@
             .hero-description {
 
                 margin-left: auto;
+
                 margin-right: auto;
             }
 
@@ -1724,21 +1779,25 @@
 
             .skills-grid {
 
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns:
+                    repeat(2,1fr);
             }
 
 
             .cert-grid,
             .achievement-grid {
 
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
             }
 
 
             .contact-wrapper {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
+
         }
 
 
@@ -1752,7 +1811,8 @@
 
                 top: 10px;
 
-                width: calc(100% - 20px);
+                width:
+                    calc(100% - 20px);
             }
 
 
@@ -1788,7 +1848,8 @@
 
                 background: var(--cream);
 
-                border: 1px solid var(--border);
+                border:
+                    1px solid var(--border);
 
                 border-radius: 20px;
 
@@ -1820,9 +1881,16 @@
             }
 
 
+            /* KEPT SMALL ON MOBILE TOO */
             .hero h1 {
 
-                font-size: 50px;
+                font-size: 18px;
+            }
+
+
+            .hero h1 span {
+
+                font-size: 18px;
             }
 
 
@@ -1864,7 +1932,8 @@
 
             .highlight-grid {
 
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
             }
 
 
@@ -1873,7 +1942,8 @@
             .cert-grid,
             .achievement-grid {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
 
@@ -1906,6 +1976,7 @@
 
                 left: 1px;
             }
+
         }
 
 
@@ -1915,15 +1986,23 @@
 
         @media (max-width: 400px) {
 
+            /* Small heading remains small */
             .hero h1 {
 
-                font-size: 42px;
+                font-size: 18px;
+            }
+
+
+            .hero h1 span {
+
+                font-size: 18px;
             }
 
 
             .highlight-grid {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
 
@@ -1937,8 +2016,8 @@
 
                 width: 100%;
             }
-        }
 
+        }
 
     </style>
 
@@ -1947,9 +2026,13 @@
 
 <body>
 
+
     <!-- Decorative background -->
+
     <div class="blob blob-one"></div>
+
     <div class="blob blob-two"></div>
+
     <div class="blob blob-three"></div>
 
 
@@ -1966,24 +2049,44 @@
 
         <div class="nav-links" id="navLinks">
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
-            <a href="#education">Education</a>
+            <a href="#education">
+                Education
+            </a>
 
-            <a href="#skills">Skills</a>
+            <a href="#skills">
+                Skills
+            </a>
 
-            <a href="#projects">Projects</a>
+            <a href="#projects">
+                Projects
+            </a>
 
-            <a href="#certifications">Certifications</a>
+            <a href="#certifications">
+                Certifications
+            </a>
 
-            <a href="#achievements">Achievements</a>
+            <a href="#achievements">
+                Achievements
+            </a>
 
-            <a href="#contact">Contact</a>
+            <a href="#contact">
+                Contact
+            </a>
 
         </div>
 
 
-        <div style="display:flex; gap:8px; align-items:center;">
+        <div
+            style="
+                display:flex;
+                gap:8px;
+                align-items:center;
+            "
+        >
 
             <button
                 class="theme-btn"
@@ -2014,14 +2117,22 @@
              HERO
         ===================================================== -->
 
-        <section class="hero" id="home">
+        <section
+            class="hero"
+            id="home"
+        >
 
             <div class="hero-content">
 
+
                 <div class="hero-badge">
+
                     ✦ Data Science • AI • Machine Learning
+
                 </div>
 
+
+                <!-- SMALL HERO TEXT -->
 
                 <h1>
 
@@ -2046,11 +2157,14 @@
 
                 <div class="hero-buttons">
 
+
                     <a
                         href="#projects"
                         class="btn btn-primary"
                     >
+
                         View My Projects →
+
                     </a>
 
 
@@ -2058,8 +2172,11 @@
                         href="#contact"
                         class="btn btn-secondary"
                     >
+
                         Contact Me ♡
+
                     </a>
+
 
                 </div>
 
@@ -2068,11 +2185,14 @@
 
             <div class="hero-image-area">
 
+
                 <div class="photo-decoration"></div>
 
 
                 <div class="floating-note note-one">
+
                     ✿ Creative Thinker
+
                 </div>
 
 
@@ -2087,8 +2207,11 @@
 
 
                 <div class="floating-note note-two">
+
                     ♡ Data Enthusiast
+
                 </div>
+
 
             </div>
 
@@ -2099,7 +2222,10 @@
              ABOUT
         ===================================================== -->
 
-        <section id="about" class="reveal">
+        <section
+            id="about"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2107,19 +2233,24 @@
                     A little about me
                 </span>
 
+
                 <h2>
                     Turning Data Into Ideas
                 </h2>
 
+
                 <p>
+
                     Curious about technology, data and creating
                     meaningful digital solutions.
+
                 </p>
 
             </div>
 
 
             <div class="about-card">
+
 
                 <h3>
                     About Me
@@ -2150,28 +2281,46 @@
 
                 <div class="highlight-grid">
 
+
                     <div class="highlight">
-                        📊<br>
+
+                        📊
+                        <br>
+
                         Data Science
+
                     </div>
 
 
                     <div class="highlight">
-                        🤖<br>
+
+                        🤖
+                        <br>
+
                         Machine Learning
+
                     </div>
 
 
                     <div class="highlight">
-                        📈<br>
+
+                        📈
+                        <br>
+
                         Data Analytics
+
                     </div>
 
 
                     <div class="highlight">
-                        💻<br>
+
+                        💻
+                        <br>
+
                         Full-Stack Development
+
                     </div>
+
 
                 </div>
 
@@ -2184,7 +2333,10 @@
              EDUCATION
         ===================================================== -->
 
-        <section id="education" class="reveal">
+        <section
+            id="education"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2192,13 +2344,17 @@
                     My journey
                 </span>
 
+
                 <h2>
                     Education
                 </h2>
 
+
                 <p>
+
                     Building a strong foundation in computer science
                     and data science.
+
                 </p>
 
             </div>
@@ -2215,24 +2371,32 @@
                     <div class="education-card">
 
                         <h3>
+
                             Sai Vidya Institute of Technology
+
                         </h3>
 
 
                         <p>
+
                             Bachelor of Engineering in Computer
                             Science (Data Science)
+
                         </p>
 
 
                         <p>
+
                             Visvesvaraya Technological University
                             (VTU)
+
                         </p>
 
 
                         <span class="date">
+
                             2023 – 2027 | Bangalore, India
+
                         </span>
 
                     </div>
@@ -2248,23 +2412,30 @@
                     <div class="education-card">
 
                         <h3>
+
                             Kendriya Vidyalaya, Donimalai
+
                         </h3>
 
 
                         <p>
+
                             CBSE Curriculum | Completed Primary to
                             Senior Secondary Education
+
                         </p>
 
 
                         <span class="date">
+
                             2011 – 2023
+
                         </span>
 
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -2275,7 +2446,10 @@
              SKILLS
         ===================================================== -->
 
-        <section id="skills" class="reveal">
+        <section
+            id="skills"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2283,13 +2457,17 @@
                     What I work with
                 </span>
 
+
                 <h2>
                     My Skills
                 </h2>
 
+
                 <p>
+
                     Technologies and concepts I use to build
                     data-driven solutions.
+
                 </p>
 
             </div>
@@ -2304,19 +2482,29 @@
                         🐍
                     </div>
 
+
                     <h3>
                         Programming
                     </h3>
 
+
                     <div class="tags">
 
-                        <span class="tag">Python</span>
+                        <span class="tag">
+                            Python
+                        </span>
 
-                        <span class="tag">SQL</span>
+                        <span class="tag">
+                            SQL
+                        </span>
 
-                        <span class="tag">C/C++</span>
+                        <span class="tag">
+                            C/C++
+                        </span>
 
-                        <span class="tag">JavaScript</span>
+                        <span class="tag">
+                            JavaScript
+                        </span>
 
                     </div>
 
@@ -2329,21 +2517,33 @@
                         📊
                     </div>
 
+
                     <h3>
                         Data Analytics
                     </h3>
 
+
                     <div class="tags">
 
-                        <span class="tag">Excel</span>
+                        <span class="tag">
+                            Excel
+                        </span>
 
-                        <span class="tag">Power BI</span>
+                        <span class="tag">
+                            Power BI
+                        </span>
 
-                        <span class="tag">Tableau</span>
+                        <span class="tag">
+                            Tableau
+                        </span>
 
-                        <span class="tag">Data Analysis</span>
+                        <span class="tag">
+                            Data Analysis
+                        </span>
 
-                        <span class="tag">Data Visualization</span>
+                        <span class="tag">
+                            Data Visualization
+                        </span>
 
                     </div>
 
@@ -2356,17 +2556,25 @@
                         🤖
                     </div>
 
+
                     <h3>
                         Machine Learning
                     </h3>
 
+
                     <div class="tags">
 
-                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">
+                            Scikit-learn
+                        </span>
 
-                        <span class="tag">Machine Learning</span>
+                        <span class="tag">
+                            Machine Learning
+                        </span>
 
-                        <span class="tag">Predictive Modeling</span>
+                        <span class="tag">
+                            Predictive Modeling
+                        </span>
 
                     </div>
 
@@ -2379,19 +2587,29 @@
                         🗄️
                     </div>
 
+
                     <h3>
                         Databases
                     </h3>
 
+
                     <div class="tags">
 
-                        <span class="tag">MySQL</span>
+                        <span class="tag">
+                            MySQL
+                        </span>
 
-                        <span class="tag">MongoDB</span>
+                        <span class="tag">
+                            MongoDB
+                        </span>
 
-                        <span class="tag">Firebase</span>
+                        <span class="tag">
+                            Firebase
+                        </span>
 
-                        <span class="tag">SQLite</span>
+                        <span class="tag">
+                            SQLite
+                        </span>
 
                     </div>
 
@@ -2404,19 +2622,29 @@
                         ⚙️
                     </div>
 
+
                     <h3>
                         Frameworks
                     </h3>
 
+
                     <div class="tags">
 
-                        <span class="tag">React.js</span>
+                        <span class="tag">
+                            React.js
+                        </span>
 
-                        <span class="tag">Flutter</span>
+                        <span class="tag">
+                            Flutter
+                        </span>
 
-                        <span class="tag">FastAPI</span>
+                        <span class="tag">
+                            FastAPI
+                        </span>
 
-                        <span class="tag">Flask</span>
+                        <span class="tag">
+                            Flask
+                        </span>
 
                     </div>
 
@@ -2429,19 +2657,29 @@
                         🛠️
                     </div>
 
+
                     <h3>
                         Developer Tools
                     </h3>
 
+
                     <div class="tags">
 
-                        <span class="tag">Git</span>
+                        <span class="tag">
+                            Git
+                        </span>
 
-                        <span class="tag">GitHub</span>
+                        <span class="tag">
+                            GitHub
+                        </span>
 
-                        <span class="tag">n8n</span>
+                        <span class="tag">
+                            n8n
+                        </span>
 
-                        <span class="tag">GitHub Copilot</span>
+                        <span class="tag">
+                            GitHub Copilot
+                        </span>
 
                     </div>
 
@@ -2454,9 +2692,11 @@
                         🧠
                     </div>
 
+
                     <h3>
                         Core Concepts
                     </h3>
+
 
                     <div class="tags">
 
@@ -2480,6 +2720,7 @@
 
                 </div>
 
+
             </div>
 
         </section>
@@ -2489,7 +2730,10 @@
              PROJECTS
         ===================================================== -->
 
-        <section id="projects" class="reveal">
+        <section
+            id="projects"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2497,13 +2741,17 @@
                     Things I've built
                 </span>
 
+
                 <h2>
                     Featured Projects
                 </h2>
 
+
                 <p>
+
                     Academic projects where technology meets
                     real-world problems.
+
                 </p>
 
             </div>
@@ -2514,20 +2762,25 @@
 
                 <article class="project-card">
 
+
                     <div class="project-number">
                         01
                     </div>
 
 
                     <h3>
+
                         Smart Agricultural Waste Classification
                         & Reuse Marketplace
+
                     </h3>
 
 
                     <p class="technology">
 
-                        <strong>Technologies:</strong>
+                        <strong>
+                            Technologies:
+                        </strong>
 
                         Python, CNN, Machine Learning,
                         Image Processing
@@ -2537,39 +2790,57 @@
 
                     <ul>
 
-                        <li>
-                            Developed an intelligent agricultural
-                            waste classification system.
-                        </li>
 
                         <li>
+
+                            Developed an intelligent agricultural
+                            waste classification system.
+
+                        </li>
+
+
+                        <li>
+
                             Trained CNN models to classify
                             agricultural waste into reusable
                             categories.
+
                         </li>
 
+
                         <li>
+
                             Analyzed image data and extracted
                             relevant features for automated
                             categorization.
+
                         </li>
 
+
                         <li>
+
                             Designed a marketplace connecting
                             farmers, recyclers and buyers.
+
                         </li>
+
 
                         <li>
+
                             Promoted sustainable waste management
                             using data-driven insights.
+
                         </li>
 
+
                     </ul>
+
 
                 </article>
 
 
                 <article class="project-card">
+
 
                     <div class="project-number">
                         02
@@ -2577,14 +2848,18 @@
 
 
                     <h3>
+
                         Artificial Bee Pollination System
                         for Ecosystem Restoration
+
                     </h3>
 
 
                     <p class="technology">
 
-                        <strong>Technologies:</strong>
+                        <strong>
+                            Technologies:
+                        </strong>
 
                         AI, Computer Vision, Drone Technology
 
@@ -2593,26 +2868,38 @@
 
                     <ul>
 
+
                         <li>
+
                             Developed the concept of an AI-powered
                             drone for automated flower detection
                             and pollination.
+
                         </li>
 
+
                         <li>
+
                             Integrated computer vision and pollen
                             transfer mechanisms to mimic natural
                             bee behavior.
+
                         </li>
 
+
                         <li>
+
                             Promoted sustainable agriculture through
                             technology-driven ecosystem restoration.
+
                         </li>
+
 
                     </ul>
 
+
                 </article>
+
 
             </div>
 
@@ -2623,7 +2910,10 @@
              CERTIFICATIONS
         ===================================================== -->
 
-        <section id="certifications" class="reveal">
+        <section
+            id="certifications"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2631,13 +2921,17 @@
                     Learning & growth
                 </span>
 
+
                 <h2>
                     Certifications
                 </h2>
 
+
                 <p>
+
                     Continuous learning through industry-focused
                     platforms and programs.
+
                 </p>
 
             </div>
@@ -2652,13 +2946,17 @@
                         📜
                     </div>
 
+
                     <h3>
                         Infosys Springboard
                     </h3>
 
+
                     <p>
+
                         Industry-recognized learning and
                         professional development certifications.
+
                     </p>
 
                 </div>
@@ -2670,13 +2968,17 @@
                         🎓
                     </div>
 
+
                     <h3>
                         SAP Learning Hub
                     </h3>
 
+
                     <p>
+
                         Professional learning and technology
                         focused certifications.
+
                     </p>
 
                 </div>
@@ -2688,16 +2990,21 @@
                         🏅
                     </div>
 
+
                     <h3>
                         Simplilearn
                     </h3>
 
+
                     <p>
+
                         Technology and career-focused
                         professional certifications.
+
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -2708,7 +3015,10 @@
              ACHIEVEMENTS
         ===================================================== -->
 
-        <section id="achievements" class="reveal">
+        <section
+            id="achievements"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2716,13 +3026,17 @@
                     Beyond academics
                 </span>
 
+
                 <h2>
                     Achievements & Hackathons
                 </h2>
 
+
                 <p>
+
                     Experiences that strengthened my teamwork,
                     creativity and problem-solving abilities.
+
                 </p>
 
             </div>
@@ -2737,9 +3051,11 @@
                         🏆
                     </div>
 
+
                     <h3>
                         Smart India Hackathon
                     </h3>
+
 
                     <p>
 
@@ -2759,9 +3075,11 @@
                         🌸
                     </div>
 
+
                     <h3>
                         SHE Innovates
                     </h3>
+
 
                     <p>
 
@@ -2780,9 +3098,11 @@
                         ✦
                     </div>
 
+
                     <h3>
                         Hackathons & Technical Events
                     </h3>
+
 
                     <p>
 
@@ -2795,6 +3115,7 @@
 
                 </div>
 
+
             </div>
 
         </section>
@@ -2804,7 +3125,10 @@
              CONTACT
         ===================================================== -->
 
-        <section id="contact" class="reveal">
+        <section
+            id="contact"
+            class="reveal"
+        >
 
             <div class="section-heading">
 
@@ -2812,13 +3136,17 @@
                     Let's connect
                 </span>
 
+
                 <h2>
                     Contact Me
                 </h2>
 
+
                 <p>
+
                     Have an opportunity, idea or project?
                     I'd love to hear from you.
+
                 </p>
 
             </div>
@@ -2831,6 +3159,7 @@
 
                 <div class="form-card">
 
+
                     <h3>
                         Send Me a Message
                     </h3>
@@ -2840,6 +3169,7 @@
                         action="https://api.web3forms.com/submit"
                         method="POST"
                     >
+
 
                         <!-- Web3Forms Access Key -->
 
@@ -2855,6 +3185,7 @@
                             <label for="name">
                                 Name
                             </label>
+
 
                             <input
                                 type="text"
@@ -2873,6 +3204,7 @@
                                 Email
                             </label>
 
+
                             <input
                                 type="email"
                                 id="email"
@@ -2890,6 +3222,7 @@
                                 Message
                             </label>
 
+
                             <textarea
                                 id="message"
                                 name="message"
@@ -2904,8 +3237,11 @@
                             type="submit"
                             class="submit-btn"
                         >
+
                             Send Message ♡
+
                         </button>
+
 
                     </form>
 
@@ -2915,6 +3251,7 @@
                 <!-- CONTACT INFORMATION -->
 
                 <div class="contact-card">
+
 
                     <h3>
                         My Contact Information
@@ -2950,10 +3287,10 @@
 
                             <span>📧</span>
 
-                            <a href="mailto:amreentaj1905@gmail.com">
-
+                            <a
+                                href="mailto:amreentaj1905@gmail.com"
+                            >
                                 amreentaj1905@gmail.com
-
                             </a>
 
                         </div>
@@ -2993,6 +3330,7 @@
 
                 </div>
 
+
             </div>
 
         </section>
@@ -3007,9 +3345,11 @@
 
     <footer>
 
+
         <h2>
             Amreen Taj S
         </h2>
+
 
         <p>
             Data Science Portfolio
@@ -3017,6 +3357,7 @@
 
 
         <div class="social-links">
+
 
             <a
                 href="https://linkedin.com/in/amreen-taj-s-b4426b398"
@@ -3036,9 +3377,12 @@
             </a>
 
 
-            <a href="mailto:amreentaj1905@gmail.com">
+            <a
+                href="mailto:amreentaj1905@gmail.com"
+            >
                 Email
             </a>
+
 
         </div>
 
@@ -3046,6 +3390,7 @@
         <p>
             © 2026 Amreen Taj S
         </p>
+
 
     </footer>
 
@@ -3063,43 +3408,56 @@
 
     <script>
 
+
         /* =====================================================
            MOBILE MENU
         ===================================================== */
 
-        const menuBtn = document.getElementById("menuBtn");
+        const menuBtn =
+            document.getElementById("menuBtn");
 
-        const navLinks = document.getElementById("navLinks");
+        const navLinks =
+            document.getElementById("navLinks");
 
 
-        menuBtn.addEventListener("click", () => {
+        menuBtn.addEventListener(
+            "click",
+            () => {
 
-            navLinks.classList.toggle("open");
+                navLinks.classList.toggle("open");
 
-        });
+            }
+        );
 
 
         /* Close mobile menu after clicking */
 
-        document.querySelectorAll(".nav-links a").forEach(link => {
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
 
-            link.addEventListener("click", () => {
+                link.addEventListener(
+                    "click",
+                    () => {
 
-                navLinks.classList.remove("open");
+                        navLinks.classList.remove("open");
+
+                    }
+                );
 
             });
-
-        });
 
 
         /* =====================================================
            DARK / LIGHT MODE
         ===================================================== */
 
-        const themeBtn = document.getElementById("themeBtn");
+        const themeBtn =
+            document.getElementById("themeBtn");
 
 
-        const savedTheme = localStorage.getItem("theme");
+        const savedTheme =
+            localStorage.getItem("theme");
 
 
         if (savedTheme === "dark") {
@@ -3111,26 +3469,39 @@
         }
 
 
-        themeBtn.addEventListener("click", () => {
+        themeBtn.addEventListener(
+            "click",
+            () => {
 
-            document.body.classList.toggle("dark");
+                document.body.classList.toggle("dark");
 
 
-            if (document.body.classList.contains("dark")) {
+                if (
+                    document.body.classList.contains("dark")
+                ) {
 
-                themeBtn.textContent = "☀️";
+                    themeBtn.textContent = "☀️";
 
-                localStorage.setItem("theme", "dark");
+                    localStorage.setItem(
+                        "theme",
+                        "dark"
+                    );
 
-            } else {
+                }
 
-                themeBtn.textContent = "🌙";
+                else {
 
-                localStorage.setItem("theme", "light");
+                    themeBtn.textContent = "🌙";
+
+                    localStorage.setItem(
+                        "theme",
+                        "light"
+                    );
+
+                }
 
             }
-
-        });
+        );
 
 
         /* =====================================================
@@ -3143,6 +3514,7 @@
 
         const revealObserver =
             new IntersectionObserver(
+
                 entries => {
 
                     entries.forEach(entry => {
@@ -3160,6 +3532,7 @@
                 {
                     threshold: 0.12
                 }
+
             );
 
 
@@ -3182,43 +3555,49 @@
             document.querySelectorAll(".nav-links a");
 
 
-        window.addEventListener("scroll", () => {
+        window.addEventListener(
+            "scroll",
+            () => {
 
-            let current = "";
-
-
-            sections.forEach(section => {
-
-                const sectionTop =
-                    section.offsetTop - 150;
+                let current = "";
 
 
-                if (window.scrollY >= sectionTop) {
+                sections.forEach(section => {
 
-                    current = section.getAttribute("id");
-
-                }
-
-            });
+                    const sectionTop =
+                        section.offsetTop - 150;
 
 
-            navItems.forEach(link => {
+                    if (
+                        window.scrollY >= sectionTop
+                    ) {
 
-                link.classList.remove("active");
+                        current =
+                            section.getAttribute("id");
+
+                    }
+
+                });
 
 
-                if (
-                    link.getAttribute("href") ===
-                    "#" + current
-                ) {
+                navItems.forEach(link => {
 
-                    link.classList.add("active");
+                    link.classList.remove("active");
 
-                }
 
-            });
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + current
+                    ) {
 
-        });
+                        link.classList.add("active");
+
+                    }
+
+                });
+
+            }
+        );
 
 
         /* =====================================================
@@ -3229,32 +3608,42 @@
             document.getElementById("topBtn");
 
 
-        window.addEventListener("scroll", () => {
+        window.addEventListener(
+            "scroll",
+            () => {
 
-            if (window.scrollY > 500) {
+                if (window.scrollY > 500) {
 
-                topBtn.style.display = "block";
+                    topBtn.style.display =
+                        "block";
 
-            } else {
+                }
 
-                topBtn.style.display = "none";
+                else {
+
+                    topBtn.style.display =
+                        "none";
+
+                }
 
             }
+        );
 
-        });
 
+        topBtn.addEventListener(
+            "click",
+            () => {
 
-        topBtn.addEventListener("click", () => {
+                window.scrollTo({
 
-            window.scrollTo({
+                    top: 0,
 
-                top: 0,
+                    behavior: "smooth"
 
-                behavior: "smooth"
+                });
 
-            });
-
-        });
+            }
+        );
 
 
     </script>
